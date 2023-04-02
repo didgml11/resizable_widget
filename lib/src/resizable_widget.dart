@@ -115,6 +115,14 @@ class ResizableWidgetState extends State<ResizableWidget> {
   }
 
   List<double> separatorPosition() {
-    return _controller.separatorPosition();
+    final List<double> list = [];
+    final children = _controller.children;
+
+    for (var i = 0; i < children.length; i++) {
+      if (children[i].widget is! Separator) {
+        list.add(children[i].size ?? 0.0);
+      }
+    }
+    return list;
   }
 }

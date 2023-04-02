@@ -78,6 +78,8 @@ class MyPage extends StatelessWidget {
   }
 
   void _printResizeInfo(List<WidgetSizeInfo> dataList) {
+    final sizes = resizableWidgetKey.currentState?.separatorPosition();
+    print(' sizes: $sizes');
     // ignore: avoid_print
     print(dataList.map((x) => '(${x.size}, ${x.percentage}%)').join(", "));
   }
