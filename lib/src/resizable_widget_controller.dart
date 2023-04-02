@@ -40,4 +40,14 @@ class ResizableWidgetController {
   Widget _separatorFactory(SeparatorArgsBasicInfo basicInfo) {
     return Separator(SeparatorArgsInfo(this, basicInfo));
   }
+
+  List<double> separatorPosition() {
+    final result = <double>[];
+    for (var i = 0; i < children.length; i++) {
+      if (children[i].widget is Separator) {
+        result.add(children[i].size!);
+      }
+    }
+    return result;
+  }
 }

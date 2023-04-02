@@ -113,4 +113,8 @@ class ResizableWidgetState extends State<ResizableWidget> {
   void moveSeparator(int separatorIndex, Offset offset) {
     _controller.resize(separatorIndex, offset);
   }
+
+  List<double> separatorPosition() {
+    return _controller.separatorPosition();
+  }
 }
